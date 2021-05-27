@@ -1,9 +1,13 @@
-var depart = prompt("Entrer un nombre de départ")
-var fin = prompt("Entrer un nombre de fin")
-var disp = "" + depart
+<p>Entrer un nombre de départ<\p><input type="text" id="depart">
+<p>Entrer un nombre de fin<\p><input type="text" id="fin">
 
+<script>
 console.log("Départ: "+ depart + "\nFin: " + fin)
 for (let i = depart+1; i <= fin; i++) {
   disp = disp + " - " + i
 }
-console.log(disp)
+<\script>
+  
+<p>Départ: <var>depart<\var><\p>
+<p>Fin: <var>fin<\var><\p>
+<p><var>disp<\var><p>
