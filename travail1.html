@@ -4,11 +4,15 @@
 <input type="text" id="fin">
 
 <script>
-for (let i = depart+1; i <= fin; i++) {
-  disp = disp + " - " + i
-}
-</script>
 
-<p>Départ: <var>depart<\var><\p>
-<p>Fin: <var>fin<\var><\p>
-<var>disp<\var>
+    //chercher les valeurs dans les textbox
+    var depart = document.getElementById("depart");
+    var fin = document.getElementById("fin");
+    for (let i = depart+1; i <= fin; i++) {
+    disp = disp + " - " + i
+    }
+
+    document.affiche("<p>Départ: "+depart+"</p>");
+    <p>Fin: <var>fin<\var></p>
+    <var>disp<\var>
+</script>
