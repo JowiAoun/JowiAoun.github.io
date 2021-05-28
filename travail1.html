@@ -2,7 +2,6 @@
 <html>
     <head>
     </head>
-    
     <body>
         <input type="text" id="prenom" placeholder="Entrez votre prenom">
         <br><input type="text" id="millieu" placeholder="Entrez votre nom de millieu">
@@ -10,20 +9,18 @@
 
         <script>
         function affichage() {
-            var prenom = document.getElementById("prenom");
-            var millieu = document.getElementById("millieu");
-            var nom = document.getElementById("nom");
+            var prenom = document.getElementById('prenom').value;
+            var millieu = document.getElementById('millieu').value;
+            var nom = document.getElementById('nom').value;
 
-            var utilisateur = String(prenom.charAt(0)+milieu.charAt(0)+nom)
+            var utilisateur = String(prenom.charAt(0)+milieu.charAt(0)+nom).toLowerCase()
             var initiales = String(prenom.charAt(0)+"."+milieu.charAt(0)+"."+nom.charAt(0)".")
-
-            affiche.innerHTML(`
-            Initiales: ${initiales}
-            Nom complet: ${prenom+" "+milieu+" "+nom}
-            Nom d'utilisateur: ${utilisateur.toLowerCase()}`)
         }
         </script>
-
+        <br>
         <br><input type="button" onclick="affichage()" value="Afficher">
+        
+        document.getElementById('resorti').innerHTML = 'Initiales: '+initiales+ '<br>Nom complet: '+ (prenom+" "+milieu+" "+nom+'<br>Nom d'utilisateur: '+utilisateur;
+        <p id="resorti"></p>
     </body>
 </html>
