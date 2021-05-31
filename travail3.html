@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Travail 3 - Passer à la caisse</title>
+</head>
+<body>
+	<script>
+		var total = 0.00
+		var tax = 0.00
+
+		document.write(`
+		+++++++++++++++++++<br>
+		REÇU D'ACHAT<br>
+		+++++++++++++++++++<br>`)
+		var i = 1
+		while(true) {
+		  var item = prompt("Entrer le nom du prochain item. Pressez 'Cancel' pour passer à la caisse.")
+		  if (typeof item === 'string') {
+			var prix = parseFloat(prompt("Entrer le prix de l'item (Format: 0.00)"))
+			document.write("<br>"+i+"- "+item)
+			document.write("<br>'--> " + prix.toFixed(2))
+			total = total + (1.13 * (prix)).toFixed(2)
+			tax = (total - (prix)).toFixed(2)
+			i++
+		  } else {
+			break;
+		  }
+		}
+
+		document.write("<br>Taxes "+tax+"<br>TOTAL "+total+"$<br>"+"+++++++++++++++++++")
+	</script>
+</body>
+</html>
