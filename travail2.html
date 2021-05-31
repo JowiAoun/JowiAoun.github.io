@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Travail 2 - Retour de nom V2</title>
+    </head>
+    <body>
+        <script>
+            var prenom = document.getElementById('prenom').value;
+            var milieu = document.getElementById('milieu').value;
+            var nom = document.getElementById('nom').value;
+
+            var utilisateur = String(prenom.charAt(0)+milieu.charAt(0)+nom).toLowerCase();
+            var initiales = String(prenom.charAt(0)+"."+milieu.charAt(0)+"."+nom.charAt(0)+".");
+			
+			function init() {
+				document.getElementById('resorti').innerHTML = 'Initiales: '+initiales;
+        	}
+			function nom() {
+				document.getElementById('resorti').innerHTML = '<br>Nom complet: '+(prenom+" "+milieu+" "+nom);
+			}
+			function util() {
+				document.getElementById('resorti').innerHTML = '<br>Nom utilisateur: '+utilisateur;
+			}
+        </script>
+        <form>
+            <input type="text" id="prenom" placeholder="Entrez votre prenom">
+            <br><input type="text" id="milieu" placeholder="Entrez votre nom de milieu">
+            <br><input type="text" id="nom" placeholder="Entrez votre nom de famille">
+            <br>
+            <br><input type="button" onclick="init()" value="Afficher initiales">
+			<br><input type="button" onclick="nom()" value="Afficher nom complet">
+			<br><input type="button" onclick="util()" value="Afficher nom d'utilisateur">
+			<p id="resorti"></p>
+
+        </form>
+    </body>
+</html>
