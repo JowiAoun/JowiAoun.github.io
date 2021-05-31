@@ -3,26 +3,29 @@
     <head>
     </head>
     <body>
-        <form>
-            <input type="text" id="prenom" placeholder="Entrez votre prenom">
-            <br><input type="text" id="millieu" placeholder="Entrez votre nom de millieu">
-            <br><input type="text" id="nom" placeholder="Entrez votre nom de famille">
-            <p id="resorti"></p>
-            <br>
-            <br><input type="button" onclick="affichage()" value="Afficher">
-        </form>
         <script>
         function affichage() {
             var prenom = document.getElementById('prenom').value;
-            var millieu = document.getElementById('millieu').value;
+            var milieu = document.getElementById('milieu').value;
             var nom = document.getElementById('nom').value;
 
             var utilisateur = String(prenom.charAt(0)+milieu.charAt(0)+nom).toLowerCase();
-            var initiales = String(prenom.charAt(0)+"."+milieu.charAt(0)+"."+nom.charAt(0)".");
+            var initiales = String(prenom.charAt(0)+"."+milieu.charAt(0)+"."+nom.charAt(0)+".");
 
-            document.getElementById('resorti').innerHTML = 'Initiales: '+initiales+'<br>Nom complet: '+(prenom+" "+milieu+" "+nom+')<br>Nom d'utilisateur: '+utilisateur;
+            document.getElementById('resorti').innerHTML =
+			'Initiales: '+initiales+
+			'<br>Nom complet: '+(prenom+" "+milieu+" "+nom)+
+			'<br>Nom utilisateur: '+utilisateur;
         }
         </script>
+        <form>
+            <input type="text" id="prenom" placeholder="Entrez votre prenom">
+            <br><input type="text" id="milieu" placeholder="Entrez votre nom de milieu">
+            <br><input type="text" id="nom" placeholder="Entrez votre nom de famille">
+            <br>
+            <br><input type="button" onclick="affichage()" value="Afficher">
+			<p id="resorti"></p>
 
+        </form>
     </body>
 </html>
